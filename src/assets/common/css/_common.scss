@@ -1,0 +1,79 @@
+.colorErr{
+    color:red;
+}
+.colorSucc{
+    color:#97f697;
+}
+@keyframes bigbig {
+	25% {
+		-webkit-transform: scale(0.85);
+	}
+
+	50% {
+		-webkit-transform: scale(0.9);
+	}
+
+	75% {
+		-webkit-transform: scale(0.95);
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+@mixin rectBox($n){
+    width:$n+px;
+    height:$n+px
+}
+@keyframes biglittle {
+    0%{
+        @include rectBox(100);
+        background:blue;
+    }
+    25%{
+        @include rectBox(75);
+        background:yellow;
+    }
+    50%{
+        @include rectBox((50));
+        background:green;
+    }
+    75%{
+        @include rectBox((25));
+        background:purple;
+    }
+    100%{
+        @include rectBox((10));
+        background:black;
+    }
+}
+.showRectAnimation{
+    animation-name:biglittle;
+    animation-duration: 1s;
+    // animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@mixin box-shadow($shadow...){
+    box-shadow: $shadow;
+}
+
+@keyframes flash {
+    0%, 30%, 100% {
+      opacity: 0;
+      box-shadow: 0 0 0vw 0vw yellow;
+    }
+    5% {
+      opacity: 1;
+      box-shadow: 0 0 2vw 0.4vw yellow;
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

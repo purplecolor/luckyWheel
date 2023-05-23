@@ -1,0 +1,16 @@
+.disfr{
+    display: flex;
+}
+.ac{
+    align-items: center
+}
+.fc{
+    @extend .disfr;
+    flex-direction: column;
+}
+.jc{
+    justify-content: center;
+}
+.fz12{
+    font-size:12px;
+}
